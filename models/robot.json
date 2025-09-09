@@ -1,0 +1,168 @@
+{
+  "@id": "dtmi:com:example:Robot;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Robot",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "robotId",
+      "schema": "string",
+      "description": "The unique identifier for the robot"
+    },
+    {
+      "@type": "Property",
+      "name": "model",
+      "schema": "string",
+      "description": "The model of the robot"
+    },
+    {
+      "@type": "Property",
+      "name": "manufacturer",
+      "schema": "string",
+      "description": "The manufacturer of the robot"
+    },
+    {
+      "@type": "Property",
+      "name": "batteryLevel",
+      "schema": "double",
+      "description": "The current battery level of the robot as a percentage"
+    },
+    {
+      "@type": "Property",
+      "name": "status",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "idle",
+            "displayName": "Idle",
+            "enumValue": "idle"
+          },
+          {
+            "name": "moving",
+            "displayName": "Moving",
+            "enumValue": "moving"
+          },
+          {
+            "name": "picking",
+            "displayName": "Picking",
+            "enumValue": "picking"
+          },
+          {
+            "name": "charging",
+            "displayName": "Charging",
+            "enumValue": "charging"
+          },
+          {
+            "name": "maintenance",
+            "displayName": "Maintenance",
+            "enumValue": "maintenance"
+          }
+        ]
+      },
+      "description": "The current status of the robot"
+    },
+    {
+      "@type": "Property",
+      "name": "currentZone",
+      "schema": "string",
+      "description": "The ID of the zone where the robot is currently located"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "position",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "x",
+            "schema": "double"
+          },
+          {
+            "name": "y",
+            "schema": "double"
+          },
+          {
+            "name": "z",
+            "schema": "double"
+          }
+        ]
+      },
+      "description": "The current position of the robot in 3D space"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "speed",
+      "schema": "double",
+      "description": "The current speed of the robot in meters per second"
+    },
+    {
+      "@type": "Command",
+      "name": "move",
+      "request": {
+        "name": "destination",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "x",
+              "schema": "double"
+            },
+            {
+              "name": "y",
+              "schema": "double"
+            },
+            {
+              "name": "z",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      "response": {
+        "name": "response",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "success",
+              "schema": "boolean"
+            },
+            {
+              "name": "message",
+              "schema": "string"
+            }
+          ]
+        }
+      },
+      "description": "Command to move the robot to a specific position"
+    },
+    {
+      "@type": "Command",
+      "name": "pickItem",
+      "request": {
+        "name": "itemId",
+        "schema": "string"
+      },
+      "response": {
+        "name": "response",
+        "schema": {
+          "@type": "Object",
+          "fields": [
+            {
+              "name": "success",
+              "schema": "boolean"
+            },
+            {
+              "name": "message",
+              "schema": "string"
+            }
+          ]
+        }
+      },
+      "description": "Command to pick an item"
+    }
+  ]
+}

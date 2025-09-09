@@ -1,0 +1,77 @@
+{
+  "@id": "dtmi:com:example:Warehouse;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Warehouse",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "name",
+      "schema": "string",
+      "description": "The name of the warehouse"
+    },
+    {
+      "@type": "Property",
+      "name": "location",
+      "schema": "string",
+      "description": "The physical location of the warehouse"
+    },
+    {
+      "@type": "Property",
+      "name": "area",
+      "schema": "double",
+      "description": "The total area of the warehouse in square meters"
+    },
+    {
+      "@type": "Property",
+      "name": "status",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "active",
+            "displayName": "Active",
+            "enumValue": "active"
+          },
+          {
+            "name": "inactive",
+            "displayName": "Inactive",
+            "enumValue": "inactive"
+          },
+          {
+            "name": "maintenance",
+            "displayName": "Under Maintenance",
+            "enumValue": "maintenance"
+          }
+        ]
+      },
+      "description": "The current status of the warehouse"
+    },
+    {
+      "@type": "Relationship",
+      "name": "contains",
+      "target": "dtmi:com:example:Zone;1",
+      "properties": [
+        {
+          "@type": "Property",
+          "name": "zoneName",
+          "schema": "string"
+        }
+      ],
+      "description": "Relationship to zones contained within the warehouse"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "temperature",
+      "schema": "double",
+      "description": "The current average temperature in the warehouse"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "humidity",
+      "schema": "double",
+      "description": "The current average humidity in the warehouse"
+    }
+  ]
+}

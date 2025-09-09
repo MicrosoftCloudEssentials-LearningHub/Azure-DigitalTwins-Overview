@@ -1,0 +1,70 @@
+{
+  "@id": "dtmi:com:example:Zone;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Zone",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "name",
+      "schema": "string",
+      "description": "The name of the zone"
+    },
+    {
+      "@type": "Property",
+      "name": "zoneType",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "storage",
+            "displayName": "Storage",
+            "enumValue": "storage"
+          },
+          {
+            "name": "picking",
+            "displayName": "Picking",
+            "enumValue": "picking"
+          },
+          {
+            "name": "shipping",
+            "displayName": "Shipping",
+            "enumValue": "shipping"
+          },
+          {
+            "name": "receiving",
+            "displayName": "Receiving",
+            "enumValue": "receiving"
+          }
+        ]
+      },
+      "description": "The type of the zone"
+    },
+    {
+      "@type": "Property",
+      "name": "level",
+      "schema": "integer",
+      "description": "The floor level of the zone"
+    },
+    {
+      "@type": "Relationship",
+      "name": "contains",
+      "target": "dtmi:com:example:Shelf;1",
+      "properties": [
+        {
+          "@type": "Property",
+          "name": "shelfId",
+          "schema": "string"
+        }
+      ],
+      "description": "Relationship to shelves contained within the zone"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "occupancyLevel",
+      "schema": "double",
+      "description": "The current occupancy level of the zone as a percentage"
+    }
+  ]
+}

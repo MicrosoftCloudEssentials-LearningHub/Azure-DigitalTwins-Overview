@@ -1,0 +1,71 @@
+{
+  "@id": "dtmi:com:example:Shelf;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Shelf",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "shelfId",
+      "schema": "string",
+      "description": "The unique identifier for the shelf"
+    },
+    {
+      "@type": "Property",
+      "name": "capacity",
+      "schema": "integer",
+      "description": "The maximum capacity of the shelf in number of items"
+    },
+    {
+      "@type": "Property",
+      "name": "itemCount",
+      "schema": "integer",
+      "description": "The current number of items on the shelf"
+    },
+    {
+      "@type": "Property",
+      "name": "shelfType",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "standard",
+            "displayName": "Standard",
+            "enumValue": "standard"
+          },
+          {
+            "name": "heavyDuty",
+            "displayName": "Heavy Duty",
+            "enumValue": "heavyDuty"
+          },
+          {
+            "name": "refrigerated",
+            "displayName": "Refrigerated",
+            "enumValue": "refrigerated"
+          }
+        ]
+      },
+      "description": "The type of the shelf"
+    },
+    {
+      "@type": "Relationship",
+      "name": "hasSensor",
+      "target": "dtmi:com:example:Sensor;1",
+      "properties": [
+        {
+          "@type": "Property",
+          "name": "sensorId",
+          "schema": "string"
+        }
+      ],
+      "description": "Relationship to sensors monitoring the shelf"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "loadPercentage",
+      "schema": "double",
+      "description": "The current load of the shelf as a percentage of its capacity"
+    }
+  ]
+}

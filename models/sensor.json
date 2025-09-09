@@ -1,0 +1,101 @@
+{
+  "@id": "dtmi:com:example:Sensor;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Sensor",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "sensorId",
+      "schema": "string",
+      "description": "The unique identifier for the sensor"
+    },
+    {
+      "@type": "Property",
+      "name": "manufacturer",
+      "schema": "string",
+      "description": "The manufacturer of the sensor"
+    },
+    {
+      "@type": "Property",
+      "name": "modelNumber",
+      "schema": "string",
+      "description": "The model number of the sensor"
+    },
+    {
+      "@type": "Property",
+      "name": "sensorType",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "temperature",
+            "displayName": "Temperature",
+            "enumValue": "temperature"
+          },
+          {
+            "name": "humidity",
+            "displayName": "Humidity",
+            "enumValue": "humidity"
+          },
+          {
+            "name": "motion",
+            "displayName": "Motion",
+            "enumValue": "motion"
+          },
+          {
+            "name": "weight",
+            "displayName": "Weight",
+            "enumValue": "weight"
+          }
+        ]
+      },
+      "description": "The type of the sensor"
+    },
+    {
+      "@type": "Property",
+      "name": "batteryLevel",
+      "schema": "double",
+      "description": "The current battery level of the sensor as a percentage"
+    },
+    {
+      "@type": "Property",
+      "name": "status",
+      "schema": {
+        "@type": "Enum",
+        "valueSchema": "string",
+        "enumValues": [
+          {
+            "name": "online",
+            "displayName": "Online",
+            "enumValue": "online"
+          },
+          {
+            "name": "offline",
+            "displayName": "Offline",
+            "enumValue": "offline"
+          },
+          {
+            "name": "maintenance",
+            "displayName": "Maintenance",
+            "enumValue": "maintenance"
+          }
+        ]
+      },
+      "description": "The current status of the sensor"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "reading",
+      "schema": "double",
+      "description": "The current reading from the sensor"
+    },
+    {
+      "@type": "Telemetry",
+      "name": "lastCommunication",
+      "schema": "dateTime",
+      "description": "Timestamp of the last communication from the sensor"
+    }
+  ]
+}
