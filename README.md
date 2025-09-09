@@ -91,7 +91,7 @@ Think of DTDL as the **blueprint** for your digital twin system. It describes:
 
 <!-- START BADGE -->
 <div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1443-limegreen" alt="Total views">
-  <p>Refresh Date: 2025-09-05</p>
+  <img src="https://img.shields.io/badge/Total%20views-40-limegreen" alt="Total views">
+  <p>Refresh Date: 2025-09-09</p>
 </div>
 <!-- END BADGE -->
