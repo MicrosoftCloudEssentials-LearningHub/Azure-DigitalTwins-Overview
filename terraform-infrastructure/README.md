@@ -18,6 +18,17 @@ Last updated: 2025-06-04
 
 </details>
 
+> [!NOTE]
+> This infrastructure includes:
+> - **Virtual Network & Subnet** - A dedicated VNet and subnet for private access to Digital Twins
+> -  **Azure Digital Twins Instance** - Core Digital Twins service with private endpoint access
+> - **Private DNS Zone** - For DNS resolution of the private endpoint
+> - **Network Security Group** - Secures traffic to the subnet
+> - **Storage Account** - For Digital Twins event data
+> - **Event Hub Namespace** - For real-time event processing from Digital Twins
+> - **Event Grid Topic** - For routing Digital Twins events
+
+
 ## Prerequisites
 
 - An `Azure subscription is required`. All other resources, including instructions for creating a Resource Group, are provided in this workshop.
