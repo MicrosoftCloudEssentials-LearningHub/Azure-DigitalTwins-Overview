@@ -67,6 +67,15 @@ data "azurerm_digital_twins_instance" "dt" {
   depends_on = [null_resource.digital_twins_instance]
 }
 
+# Assign Azure Digital Twins Data Reader role to the current user
+resource "azurerm_role_assignment" "dt_data_reader" {
+  scope                = data.azurerm_digital_twins_instance.dt.id
+  role_definition_name = "Azure Digital Twins Data Reader"
+  principal_id         = data.azurerm_client_config.current.object_id
+
+  depends_on = [data.azurerm_digital_twins_instance.dt]
+}
+
 # Create private DNS zone for Digital Twins
 resource "azurerm_private_dns_zone" "dns_zone" {
   name                = var.private_dns_zone_name
