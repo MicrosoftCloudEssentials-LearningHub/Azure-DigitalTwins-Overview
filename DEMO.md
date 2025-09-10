@@ -58,167 +58,63 @@ For this demo, you can set up your infrastructure using either of the following 
   - Create a `.json` file for each model (e.g., `shelf.json`)
   - Use the DTDL schema to define properties, telemetry, and relationships
 
-> For example: `Warehouse`: The top-level entity representing the entire facility. It contains multiple zones and has metadata like location.
+> For detailed model definitions, see an example of models in the [`models/`](./models/) directory of this repository.
 
 <details>
 <summary><b> Full Warehouse Model (warehouse.json)</b></summary>
 
-```json
-{
-  "@id": "dtmi:warehouse:main;1",
-  "@type": "Interface",
-  "displayName": "Warehouse",
-  "contents": [
-    {
-      "@type": "Property",
-      "name": "location",
-      "schema": "string"
-    },
-    {
-      "@type": "Relationship",
-      "name": "zones",
-      "target": "dtmi:warehouse:zone;1"
-    }
-  ]
-}
-```
+> For example: `Warehouse`: The top-level entity representing the entire facility. It contains multiple zones and has metadata like location. See an example of model definition in [`models/warehouse.json`](./models/warehouse.json)
+
+Key features:
+- Properties: `location` (string)
+- Relationships: `zones` (points to Zone model)
 
 </details>
 
 <details>
 <summary><b> Zone Model (zone.json)</b></summary>
 
-> **Zone**: A logical or physical section of the warehouse (e.g., receiving, storage, packing). It organizes shelves, sensors, and robots within a defined area.
+> **Zone**: A logical or physical section of the warehouse (e.g., receiving, storage, packing). It organizes shelves, sensors, and robots within a defined area. See an example of model definition in [`models/zone.json`](./models/zone.json)
 
-```json
-{
-  "@id": "dtmi:warehouse:zone;1",
-  "@type": "Interface",
-  "displayName": "Zone",
-  "contents": [
-    {
-      "@type": "Property",
-      "name": "zoneType",
-      "schema": "string"
-    },
-    {
-      "@type": "Relationship",
-      "name": "shelves",
-      "target": "dtmi:warehouse:shelf;1"
-    },
-    {
-      "@type": "Relationship",
-      "name": "sensors",
-      "target": "dtmi:warehouse:sensor;1"
-    },
-    {
-      "@type": "Relationship",
-      "name": "robots",
-      "target": "dtmi:warehouse:robot;1"
-    }
-  ]
-}
-```
+Key features:
+- Properties: `zoneType` (string)  
+- Relationships: `shelves`, `sensors`, `robots`
 
 </details>
 
 <details>
 <summary><b> Shelf Model (shelf.json)</b></summary>
 
-> **Shelf**: Represents a storage unit. It has a fixed capacity and reports its current load via telemetry. It belongs to a specific zone.
+> **Shelf**: Represents a storage unit. It has a fixed capacity and reports its current load via telemetry. It belongs to a specific zone. See an example of model definition in [`models/shelf.json`](./models/shelf.json)
 
-```json
-{
-  "@id": "dtmi:warehouse:shelf;1",
-  "@type": "Interface",
-  "displayName": "Shelf",
-  "contents": [
-    {
-      "@type": "Property",
-      "name": "capacity",
-      "schema": "integer"
-    },
-    {
-      "@type": "Telemetry",
-      "name": "currentLoad",
-      "schema": "integer"
-    },
-    {
-      "@type": "Relationship",
-      "name": "belongsToZone",
-      "target": "dtmi:warehouse:zone;1"
-    }
-  ]
-}
-```
+Key features:
+- Properties: `capacity` (integer)
+- Telemetry: `currentLoad` (integer)
+- Relationships: `belongsToZone`
 
 </details>
 
 <details>
 <summary><b> Sensor Model (sensor.json)</b></summary>
 
-> **Sensor**: Monitors environmental conditions like temperature and humidity. Useful for compliance, safety, and operational efficiency.
+> **Sensor**: Monitors environmental conditions like temperature and humidity. Useful for compliance, safety, and operational efficiency. See an example of model definition in [`models/sensor.json`](./models/sensor.json)
 
-```json
-{
-  "@id": "dtmi:warehouse:sensor;1",
-  "@type": "Interface",
-  "displayName": "Sensor",
-  "contents": [
-    {
-      "@type": "Telemetry",
-      "name": "temperature",
-      "schema": "double"
-    },
-    {
-      "@type": "Telemetry",
-      "name": "humidity",
-      "schema": "double"
-    },
-    {
-      "@type": "Property",
-      "name": "sensorType",
-      "schema": "string"
-    }
-  ]
-}
-```
+Key features:
+- Telemetry: `temperature`, `humidity`
+- Properties: `sensorType`
 
 </details>
-
 
 <details>
 <summary><b> Robot Model (robot.json)</b></summary>
 
-> **Robot**: Represents an autonomous machine like an AGV or robotic arm. It can report its battery level and receive commands to interact with shelves.
+> **Robot**: Represents an autonomous machine like an AGV or robotic arm. It can report its battery level and receive commands to interact with shelves. See an example of model definition in [`models/robot.json`](./models/robot.json)
 
-```json
-{
-  "@id": "dtmi:warehouse:robot;1",
-  "@type": "Interface",
-  "displayName": "Robot",
-  "contents": [
-    {
-      "@type": "Property",
-      "name": "robotId",
-      "schema": "string"
-    },
-    {
-      "@type": "Telemetry",
-      "name": "batteryLevel",
-      "schema": "double"
-    },
-    {
-      "@type": "Command",
-      "name": "moveToShelf",
-      "request": {
-        "name": "shelfId",
-        "schema": "string"
-      }
-    }
-  ]
-}
-```
+Key features:
+- Properties: `robotId`
+- Telemetry: `batteryLevel`
+- Commands: `moveToShelf`
+
 </details>
 
 ### Step 3: Upload Models Using Azure CLI
@@ -227,7 +123,6 @@ For this demo, you can set up your infrastructure using either of the following 
 
 - [How to install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Get started with Azure CLI](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)
-
 
 > Commands:
 > - Authenticates your session
@@ -240,7 +135,7 @@ For this demo, you can set up your infrastructure using either of the following 
 ```bash
 az login
 az extension add --name azure-iot
-az dt model create --dt-name <your-instance-name> --models shelf.json zone.json sensor.json robot.json warehouse.json
+az dt model create --dt-name <your-instance-name> --models <model-name>.json
 ```
 
 ## Step 4: Instantiate Twins and Define Relationships
