@@ -1,4 +1,4 @@
-# Azure Digital Twins - Overview 
+# Demo: Warehouse digital twin using Azure Digital Twins 
 
 Costa Rica
 
@@ -19,6 +19,7 @@ Last updated: 2025-09-09
 
 > Example of the deployment process for your warehouse digital twin using Azure Digital Twins and DTDL.
 
+https://github.com/user-attachments/assets/c4a412fd-a3d0-4389-b239-e3436853613a
 
 For this demo, you can set up your infrastructure using either of the following approaches:
 
