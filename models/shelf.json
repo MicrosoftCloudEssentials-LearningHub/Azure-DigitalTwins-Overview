@@ -62,6 +62,12 @@
       "description": "Relationship to sensors monitoring the shelf"
     },
     {
+      "@type": "Relationship",
+      "name": "belongsToZone",
+      "target": "dtmi:com:example:Zone;1",
+      "description": "Relationship to the zone that contains this shelf"
+    },
+    {
       "@type": "Telemetry",
       "name": "loadPercentage",
       "schema": "double",
