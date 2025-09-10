@@ -22,6 +22,10 @@ Last updated: 2025-09-09
 
 </details>
 
+<img width="2787" height="1792" alt="image" src="https://github.com/user-attachments/assets/349ae79a-0d1f-4912-9e17-d2bfe3616f2d" />
+
+From [MSFT- Sample solution architecture](https://learn.microsoft.com/en-us/azure/digital-twins/overview#sample-solution-architecture)
+
 > [!TIP]
 > Using DTDL in Azure Digital Twins allows you to:
 > - `Digitally represent` your warehouse `layout and operations`
