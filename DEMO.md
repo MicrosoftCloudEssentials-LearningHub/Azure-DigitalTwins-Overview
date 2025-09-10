@@ -22,8 +22,8 @@ Last updated: 2025-09-09
 
 For this demo, you can set up your infrastructure using either of the following approaches:
 
-1. [Infrastructure via Azure Portal](./AzurePortal/): This approach involves creating the infrastructure and performing `all necessary steps through the Azure Portal` and its resources interface. 
-2. [Infrastructure via Terraform](./Terraform/): This approach focuses on `setting up the required infrastructure via Terraform`. It allows for source control of not only the solution code, connections, and setups `but also the infrastructure itself`.
+1. [Infrastructure via Azure Portal](./DEMO.md): This approach involves creating the infrastructure and performing `all necessary steps through the Azure Portal` and its resources interface, please read below as an example.
+2. [Infrastructure via Terraform](./terraform-infrastructure/): This approach focuses on `setting up the required infrastructure via Terraform`. It allows for source control of not only the solution code, connections, and setups `but also the infrastructure itself`.
 
 ## Prerequisites
 
