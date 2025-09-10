@@ -20,9 +20,6 @@ Last updated: 2025-09-09
 > - Query and Analyze: Use powerful APIs to extract insights, simulate scenarios, and optimize operations.
 > - Visualize in 3D: Build interactive dashboards or 3D scenes to monitor and control your environment.
 
-> [!IMPORTANT]
-> This guide walks you through setting up a digital twin of a warehouse using Azure Digital Twins and Digital Twin Definition Language (DTDL). It includes modeling, deployment, and integration steps.
-
 <details>
 <summary><b>List of References</b> (Click to expand)</summary>
 
@@ -35,6 +32,9 @@ Last updated: 2025-09-09
 <img width="2787" height="1792" alt="image" src="https://github.com/user-attachments/assets/349ae79a-0d1f-4912-9e17-d2bfe3616f2d" />
 
 From [MSFT- Sample solution architecture](https://learn.microsoft.com/en-us/azure/digital-twins/overview#sample-solution-architecture)
+
+> [!IMPORTANT]
+> This guide walks you through setting up a digital twin of a warehouse using Azure Digital Twins and Digital Twin Definition Language (DTDL). It includes modeling, deployment, and integration steps.
 
 > [!TIP]
 > Using DTDL in Azure Digital Twins allows you to:
