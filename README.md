@@ -10,8 +10,15 @@ Last updated: 2025-09-09
 
 ----------
 
-> [!IMPORTANT]
-> This guide walks you through setting up a digital twin of a warehouse using Azure Digital Twins and Digital Twin Definition Language (DTDL). It includes modeling, deployment, and integration steps.
+> `A digital twin is a virtual representation of a physical object, system, or environment`. Think of it as a real-time digital mirror of something in the physical world, like a building, a factory, or even an entire city. It uses data from sensors and systems to simulate, monitor, and analyze how the real world counterpart behaves.
+
+> [!TIP]
+> Azure Digital Twins is Microsoft’s `platform-as-a-service (PaaS)` offering that lets you build these digital models at scale. 
+> - Model Entire Environments: You can digitally recreate buildings, farms, energy grids, stadiums even whole cities.
+> - Use DTDL (Digital Twins Definition Language): This is a JSON-like language to define entities like rooms, elevators, or machines, and describe their properties, telemetry, and relationships.
+> - Live Data Integration: Connect IoT devices and business systems to stream real-time data into your digital twin.
+> - Query and Analyze: Use powerful APIs to extract insights, simulate scenarios, and optimize operations.
+> - Visualize in 3D: Build interactive dashboards or 3D scenes to monitor and control your environment.
 
 <details>
 <summary><b>List of References</b> (Click to expand)</summary>
@@ -21,6 +28,13 @@ Last updated: 2025-09-09
 - [Azure Digital Twins pricing](https://azure.microsoft.com/en-us/pricing/details/digital-twins/)
 
 </details>
+
+<img width="2787" height="1792" alt="image" src="https://github.com/user-attachments/assets/349ae79a-0d1f-4912-9e17-d2bfe3616f2d" />
+
+From [MSFT- Sample solution architecture](https://learn.microsoft.com/en-us/azure/digital-twins/overview#sample-solution-architecture)
+
+> [!IMPORTANT]
+> This guide walks you through setting up a digital twin of a warehouse using Azure Digital Twins and Digital Twin Definition Language (DTDL). It includes modeling, deployment, and integration steps.
 
 > [!TIP]
 > Using DTDL in Azure Digital Twins allows you to:
@@ -91,7 +105,7 @@ Think of DTDL as the **blueprint** for your digital twin system. It describes:
 
 <!-- START BADGE -->
 <div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1391-limegreen" alt="Total views">
+  <img src="https://img.shields.io/badge/Total%20views-1450-limegreen" alt="Total views">
   <p>Refresh Date: 2025-09-10</p>
 </div>
 <!-- END BADGE -->
