@@ -6,7 +6,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2025-09-09
+Last updated: 2025-09-10
 
 ----------
 
@@ -141,7 +141,7 @@ az dt model create --dt-name <your-instance-name> --models <model-name>.json
 
 ## Step 4: Instantiate Twins and Define Relationships
 
-> After uploading models, you create **twin instances**—these are the actual digital representations of your physical components.
+> After uploading models, you create **twin instances**, these are the actual digital representations of your physical components.
 
 > [!TIP]
 > Use meaningful twin IDs like `zone01`, `robotA`, `sensorTemp01` to keep your graph organized.
@@ -156,7 +156,6 @@ az dt twin create \
   --twin-id shelf01 \
   --model-id dtmi:warehouse:shelf;1
 ```
-
 
 2. Define Relationships:
 
@@ -193,8 +192,6 @@ E.g This data will be routed to Azure Digital Twins to update the `currentLoad` 
 }
 ```
 
-
-
 ## Step 6: Route Telemetry Using Azure Functions
 
 > Azure Functions act as **middleware** to process incoming telemetry and update your digital twins.
@@ -221,9 +218,8 @@ client.update_digital_twin(
 
 > Azure Digital Twins Explorer is a **graphical interface** to view and interact with your twin graph.
 
-1. Download the tool from https://learn.microsoft.com/en-us/azure/digital-twins/overview-digital-twins-explorer
-2. Connect it to your Azure Digital Twins instance
-3. Explore:
+1. Connect it to your Azure Digital Twins instance
+2. Explore:
    - Twin relationships
    - Real-time telemetry
    - Model structure
@@ -234,9 +230,6 @@ client.update_digital_twin(
 ```sql
 SELECT * FROM digitaltwins WHERE IS_OF_MODEL('dtmi:warehouse:shelf;1')
 ```
-
-
-
 
 <!-- START BADGE -->
 <div align="center">
