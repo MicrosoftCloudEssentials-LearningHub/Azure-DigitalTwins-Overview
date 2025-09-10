@@ -19,6 +19,21 @@ Last updated: 2025-09-09
 
 > Example of the deployment process for your warehouse digital twin using Azure Digital Twins and DTDL.
 
+
+For this demo, you can set up your infrastructure using either of the following approaches:
+
+1. [Infrastructure via Azure Portal](./AzurePortal/): This approach involves creating the infrastructure and performing `all necessary steps through the Azure Portal` and its resources interface. 
+2. [Infrastructure via Terraform](./Terraform/): This approach focuses on `setting up the required infrastructure via Terraform`. It allows for source control of not only the solution code, connections, and setups `but also the infrastructure itself`.
+
+## Prerequisites
+
+- An `Azure subscription is required`. All other resources, including instructions for creating a Resource Group, are provided in this workshop.
+- `Contributor role assigned or any custom role that allows`: access to manage all resources, and the ability to deploy resources within subscription.
+- If you choose to use the Terraform approach, please ensure that:
+    -  [Terraform is installed on your local machine](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/install-cli#install-terraform).
+    -  [Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) to work with both Terraform and Azure commands.
+
+
 ## Step 1: Create Azure Digital Twins Instance:
   - Go to [https://portal.azure.com](https://portal.azure.com/#home)
   - Search for **Azure Digital Twins** → Click **Create**
