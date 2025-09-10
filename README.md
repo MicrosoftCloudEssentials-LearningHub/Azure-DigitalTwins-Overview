@@ -10,6 +10,16 @@ Last updated: 2025-09-09
 
 ----------
 
+> `A digital twin is a virtual representation of a physical object, system, or environment`. Think of it as a real-time digital mirror of something in the physical world, like a building, a factory, or even an entire city. It uses data from sensors and systems to simulate, monitor, and analyze how the real world counterpart behaves.
+
+> [!TIP]
+> Azure Digital Twins is Microsoft’s `platform-as-a-service (PaaS)` offering that lets you build these digital models at scale. 
+> - Model Entire Environments: You can digitally recreate buildings, farms, energy grids, stadiums even whole cities.
+> - Use DTDL (Digital Twins Definition Language): This is a JSON-like language to define entities like rooms, elevators, or machines, and describe their properties, telemetry, and relationships.
+> - Live Data Integration: Connect IoT devices and business systems to stream real-time data into your digital twin.
+> - Query and Analyze: Use powerful APIs to extract insights, simulate scenarios, and optimize operations.
+> - Visualize in 3D: Build interactive dashboards or 3D scenes to monitor and control your environment.
+
 > [!IMPORTANT]
 > This guide walks you through setting up a digital twin of a warehouse using Azure Digital Twins and Digital Twin Definition Language (DTDL). It includes modeling, deployment, and integration steps.
 
