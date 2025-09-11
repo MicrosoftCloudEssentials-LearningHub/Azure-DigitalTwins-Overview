@@ -139,6 +139,13 @@ az extension add --name azure-iot
 az dt model create --dt-name <your-instance-name> --models <model-name>.json
 ```
 
+> [!TIP] 
+> Steps 3, 4, and 7 can be automated using the included PowerShell scripts and Makefile:
+> - `make deploy-simple` - Uploads models and creates basic twins and relationships (Steps 3 & 4)
+> - `make deploy` - Performs a full deployment with more complex twins and relationships (Steps 3 & 4)
+> - `make explorer` - Launches the Digital Twins Explorer tool (Step 7)
+> - Run `make help` to see all available commands.
+
 ## Step 4: Instantiate Twins and Define Relationships
 
 > After uploading models, you create **twin instances**, these are the actual digital representations of your physical components.
@@ -218,11 +225,20 @@ client.update_digital_twin(
 
 > Azure Digital Twins Explorer is a **graphical interface** to view and interact with your twin graph.
 
+> [!TIP]
+> Run `make explorer` to automatically launch the Digital Twins Explorer tool connected to your instance.
+
 1. Connect it to your Azure Digital Twins instance
 2. Explore:
    - Twin relationships
    - Real-time telemetry
    - Model structure
+
+From UI:
+
+<img width="1915" height="1016" alt="image" src="https://github.com/user-attachments/assets/8a19883b-e76e-4868-920b-a27471a520df" />
+
+https://github.com/user-attachments/assets/a5c85d72-f30d-4985-8026-50359fae270f
 
 > [!TIP]
 > Use the query editor to run graph queries like:
