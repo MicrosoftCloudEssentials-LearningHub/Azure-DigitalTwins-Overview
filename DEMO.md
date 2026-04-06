@@ -4,7 +4,7 @@ Costa Rica
 
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com)
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[brown9804](https://github.com/brown9804)
+[Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
 
 Last updated: 2025-09-10
 
@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/c4a412fd-a3d0-4389-b239-e3436853613a
 
 For this demo, you can set up your infrastructure using either of the following approaches:
 
-1. [Infrastructure via Azure Portal](https://github.com/MicrosoftCloudEssentials-LearningHub/Azure-DigitalTwins-Overview/blob/testing-deployment-demo/DEMO.md#prerequisites): This approach involves creating the infrastructure and performing `all necessary steps through the Azure Portal` and its resources interface, please read below as an example.
+1. [Infrastructure via Azure Portal](https://github.com/Cloud2BR-MSFTLearningHub/Azure-DigitalTwins-Overview/blob/testing-deployment-demo/DEMO.md#prerequisites): This approach involves creating the infrastructure and performing `all necessary steps through the Azure Portal` and its resources interface, please read below as an example.
 2. [Infrastructure via Terraform](./terraform-infrastructure/): This approach focuses on `setting up the required infrastructure via Terraform`. It allows for source control of not only the solution code, connections, and setups `but also the infrastructure itself`.
 
 ## Prerequisites
